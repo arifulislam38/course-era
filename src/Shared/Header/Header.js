@@ -20,7 +20,7 @@ useEffect(()=> {
         }
     }
     return (
-        <nav className='h-[90vh]'>
+        <nav className='h-[90vh] mb-12'>
           
         <div className="carousel w-screen h-full">
                 <div id="item1" className="carousel-item w-full relative">
@@ -45,8 +45,11 @@ useEffect(()=> {
   </div>
 </div> 
 
-<div className="navbar bg-transparent absolute top-0">
-            <div className="navbar-end font-semibold text-2xl text-white flex justify-evenly">
+
+
+
+<div className="navbar bg-transparent fixed top-0">
+            <div className="navbar-end font-semibold text-2xl text-orange-300 flex justify-evenly">
                <Link className='hover:bg-gray-200 p-2 rounded'>Courses</Link>
                <Link className='hover:bg-gray-200 p-2 rounded'>Blog</Link>
                <Link className='hover:bg-gray-200 p-2 rounded'>about</Link>
