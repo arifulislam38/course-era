@@ -1,16 +1,17 @@
 
 import { FaStar, FaRegStarHalf, FaComment } from 'react-icons/fa';
 import { BsAwardFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const CourseCard = ({course}) => {
 
  
     
 
-    const {name, description, video, ebook, price, image, rating} = course;
+    const {id, name, description, video, ebook, price, image, rating} = course;
     return (
         
-        <div className='border w-[32.2%] p-2 transp h-[450px] relative'>
+        <div className='border w-[32.2%] p-2 relative'>
             <button className='bg-orange-500 px-2 py-1 absolute top-4 right-0 text-yellow-50'>$ {price}</button>
             <div className='w-full h-full'>
                 <img className='w-full h-[40%]' src={image} alt="" />
@@ -29,12 +30,12 @@ const CourseCard = ({course}) => {
                     </div>
                     <p className='text-start'>{description?.descriptions}</p>
 
-                    <hr className='mt-3 mb3'/>
+                    <hr className='mt-3 mb-3'/>
                     
                     <div className='flex justify-between mt-6 '>
-                        <h1 className='border-r-2 text-2xl px-2'>{video}</h1>
-                        <h1 className='border-r-2 text-2xl px-2'>{ebook}</h1>
-                        <button className='p-2 rounded bg-orange-300'>See Details</button>
+                        <h1 className='border-r-2 text-xl px-2'>{video}</h1>
+                        <h1 className='border-r-2 text-xl px-2'>{ebook}</h1>
+                        <button  className='px-2 rounded bg-orange-300'><Link to={`/course/${id}`}>See Details</Link></button>
                     </div>
                 </div>
             </div>

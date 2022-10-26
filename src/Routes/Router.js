@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import CourseCard from "../CourseCard/CourseCard";
 import Main from "../Layout/Main/Main";
 import Body from "../Pages/Body/Body";
+import CourseDeatails from "../Pages/CourseDetails/CourseDeatails";
 import Courses from "../Pages/courses/Courses";
 import Courses1 from "../Pages/courses/Courses1";
 
@@ -12,6 +13,7 @@ export let routes = createBrowserRouter([
         children: [
             {
                 path: '/',
+                loader:()=> fetch('http://localhost:5000'),
                 element: <Body></Body>
             },
             {
@@ -22,8 +24,18 @@ export let routes = createBrowserRouter([
                         path: '/courses',
                         loader:()=> fetch('http://localhost:5000'),
                         element: <Courses1></Courses1>
-                    }
+                    },
+                    {
+                        path: '/courses/:catname',
+                        loader: ({params})=> fetch(`http://localhost:5000/courses/${params.catname}`),
+                        element: <Courses1></Courses1>
+                    },
                 ],
+            },
+            {
+                path: '/course/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
+                element: <CourseDeatails></CourseDeatails>
             }
         ],
     },

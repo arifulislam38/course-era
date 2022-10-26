@@ -7,7 +7,7 @@ const Courses1 = () => {
     console.log(data)
 
     return (
-       <div className='w-[60%] flex flex-wrap gap-3'>
+       <div className='w-[75%] flex flex-wrap gap-3'>
          {data.map(course => <CourseCard course={course}></CourseCard>)}
        </div>
     );

@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ImUsers } from 'react-icons/im';
+import { useLoaderData } from 'react-router-dom';
 import CourseCard from '../../CourseCard/CourseCard';
 
 const Body = () => {
 
-    const [courses, setCourses] = useState([]);
+    const courses = useLoaderData();
     console.log(courses);
-    useEffect(()=> {
-        fetch('http://localhost:5000')
-        .then(res => res.json())
-        .then(data => setCourses(data));
-    }, []);
     
     return (
         <>
