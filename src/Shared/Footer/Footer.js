@@ -3,15 +3,34 @@ import { FaAngleRight } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-<footer>
-        <div class="bg-black mt-5 text-gray-300 text-start">
-            <div class="w-[80%] mx-auto p-4">
-                <div class="grid grid-cols-3 gap-5">
+<footer className=' mt-5 bg-[#14171D]'>
+    <div class= "p-9"> 
+        <div class="w-[90%] mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="">
+                    <div class="text-start">
+                        <p class="mb-2 text-xl text-gray-200">Click to Join the Advance Workshop</p>
+                        <h2 className='text-5xl text-gray-300 font-serif'>Training in advance networking</h2>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <a class="btn btn-light btn-round" href="#">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr className='mt-16'/>
+    </div>
+    
+        <div class=" text-gray-300 text-start">
+            <div class="w-[80%] mx-auto py-8">
+                <div class="grid grid-cols-3 gap-5 mb-6">
 
 
                     <div class="text-xl font-serif">
                         <div class="flex flex-col gap-5">
-                           <img src="assets/images/icon/logo.png" alt="image" className='mb-8' />
+                           <h1 className='text-5xl text-orange-300'>Learning Web</h1>
                             <div class="">
                                 <h6 className='text-orange-300'>Office Address</h6>
                                 <p>London Oxford Street, 012 United Kingdom.</p>
@@ -63,8 +82,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div class="footer-bottom">
-                    <p>Copyright © 2019 <span><a class="primary-color" href="https://themeforest.net/user/pixelthemez/portfolio" target="_blank">Edification</a> </span> - All Rights Reserved. Made by <span><a class="primary-color" href="https://furioustheme.com/" target="_blank">Furioustheme</a></span></p>
+                <div class="text-center p-5">
+                    <p>Copyright © 2019 Edification- All Rights Reserved. Made by learnEdu</p>
                 </div>
             </div>
         </div>

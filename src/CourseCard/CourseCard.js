@@ -1,10 +1,15 @@
-import React from 'react';
+
 import { FaStar, FaRegStarHalf, FaComment } from 'react-icons/fa';
 import { BsAwardFill } from 'react-icons/bs';
 
 const CourseCard = ({course}) => {
+
+ 
+    
+
     const {name, description, video, ebook, price, image, rating} = course;
     return (
+        
         <div className='border w-[32.2%] p-2 transp h-[450px] relative'>
             <button className='bg-orange-500 px-2 py-1 absolute top-4 right-0 text-yellow-50'>$ {price}</button>
             <div className='w-full h-full'>
@@ -19,10 +24,10 @@ const CourseCard = ({course}) => {
                         <FaStar></FaStar>
                         <FaRegStarHalf></FaRegStarHalf>
                     </h2>
-                    <h2><FaComment className='inline text-orange-300'></FaComment> {rating.count}</h2>
-                    <h2><BsAwardFill className='inline text-orange-300'></BsAwardFill> {rating.badge}</h2>
+                    <h2><FaComment className='inline text-orange-300'></FaComment> {rating?.count}</h2>
+                    <h2><BsAwardFill className='inline text-orange-300'></BsAwardFill> {rating?.badge}</h2>
                     </div>
-                    <p className='text-start'>{description.descriptions}</p>
+                    <p className='text-start'>{description?.descriptions}</p>
 
                     <hr className='mt-3 mb3'/>
                     
@@ -33,7 +38,7 @@ const CourseCard = ({course}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     );
 };
 

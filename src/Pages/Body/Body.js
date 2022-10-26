@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CourseCard from '../../CourseCard/CourseCard';
 import { ImUsers } from 'react-icons/im';
+import CourseCard from '../../CourseCard/CourseCard';
 
 const Body = () => {
 
@@ -41,6 +41,7 @@ const Body = () => {
             <h1 className='text-5xl text-orange-400 font-semibold font-serif mb-10'>Our Featured Courses</h1>
             <div className='w-[90%] flex flex-wrap gap-5 mx-auto'>
                 {courses.map(course => <CourseCard key={course.id} course={course}></CourseCard>)}
+               
             </div>
         </section>  
         </>
