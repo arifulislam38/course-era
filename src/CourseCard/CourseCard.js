@@ -1,22 +1,35 @@
 import React from 'react';
+import { FaStar, FaRegStarHalf, FaComment } from 'react-icons/fa';
+import { BsAwardFill } from 'react-icons/bs';
 
 const CourseCard = ({course}) => {
-    const {name, description, video, ebook, price, image} = course;
+    const {name, description, video, ebook, price, image, rating} = course;
     return (
-        <div className='border w-[32.2%] p-2 transp h-[450px]'>
+        <div className='border w-[32.2%] p-2 transp h-[450px] relative'>
+            <button className='bg-orange-500 px-2 py-1 absolute top-4 right-0 text-yellow-50'>$ {price}</button>
             <div className='w-full h-full'>
                 <img className='w-full h-[40%]' src={image} alt="" />
                 <div className='px-2'>
-                    <h1 className='text-start text-2xl font-semibold mb-4 mt-4'>{name}</h1>
-                    <h2 className='text-start text-lg mb-6'>{description.location}</h2>
-                    <hr className='w-[80%] mx-auto'/>
-                    <p className='flex justify-between text-lg font-semibold mt-6'>
-                        <span>{video}</span> 
-                        <span>{ebook}</span>
-                    </p>
-                    <div className='flex justify-between mt-6'>
-                        <h1 className='text-4xl font-semibold'>$ {price}</h1>
-                        <button className='btn'>See Details</button>
+                    <h1 className='text-start text-2xl font-semibold mb-4 mt-4 font-serif'>{name}</h1>
+                    <div className='flex justify-between items-center mb-3'>
+                        <h2 className='flex text-orange-400 gap-1'>
+                        <FaStar></FaStar>
+                        <FaStar></FaStar>
+                        <FaStar></FaStar>
+                        <FaStar></FaStar>
+                        <FaRegStarHalf></FaRegStarHalf>
+                    </h2>
+                    <h2><FaComment className='inline text-orange-300'></FaComment> {rating.count}</h2>
+                    <h2><BsAwardFill className='inline text-orange-300'></BsAwardFill> {rating.badge}</h2>
+                    </div>
+                    <p className='text-start'>{description.descriptions}</p>
+
+                    <hr className='mt-3 mb3'/>
+                    
+                    <div className='flex justify-between mt-6 '>
+                        <h1 className='border-r-2 text-2xl px-2'>{video}</h1>
+                        <h1 className='border-r-2 text-2xl px-2'>{ebook}</h1>
+                        <button className='p-2 rounded bg-orange-300'>See Details</button>
                     </div>
                 </div>
             </div>
