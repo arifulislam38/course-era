@@ -13,7 +13,7 @@ const CourseDeatails = () => {
 
     return (
         <section>
-            <div className='h-[50%] relative mb-40'>
+            <div className='h-[50vh] relative mb-40'>
                 <img className='w-full h-full opacity-50' src={image} alt="" />
                 <h1 className='text-6xl font-serif absolute bottom-28 left-28'><span className='text-orange-400'>-- Details of</span> {name}</h1>
             </div>
@@ -34,8 +34,15 @@ const CourseDeatails = () => {
                             </div>
                         </div>
                     </div>
+                    <div className='text-start text-xl mt-7'>
+                        <h1 className='mb-7 font-serif text-orange-500 text-3xl'>{title}</h1>
+                        <p>{descriptions}</p>
+                    </div>
                 </div>
-                <div></div>
+                <div className='flex flex-col border w-[30%] h-[80vh] items-center py-6 bg-slate-200'>
+                    <img src={image} className='w-[150px] h-[150px] rounded-full' alt="" />
+                    <h2 className='text-xl font-serif mt-8'>{descriptions}</h2>
+                </div>
             </div>
         </section>
     );
