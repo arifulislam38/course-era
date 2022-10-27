@@ -50,9 +50,10 @@ export let routes = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path:'/premium',
+                path:'/premium/:name',
+                loader: ({params}) => fetch(`http://localhost:5000/premium/${params.name}`),
                 element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>
-            }
+            },
         ],
     },
 ]);

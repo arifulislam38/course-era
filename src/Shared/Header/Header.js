@@ -47,7 +47,7 @@ useEffect(()=> {
                             
                            <div className='flex gap-3 justify-center items-center'>
                            
-                            <img className='w-[50px] h-[50px] rounded-full' src={user?.photoURL} alt="" />
+                            <img title={user.email} className='w-[50px] h-[50px] rounded-full' src={user?.photoURL} alt="" />
                             <button onClick={handleLogOut}>Log out</button>
                            </div>
                            :
