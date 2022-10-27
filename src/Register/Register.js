@@ -1,6 +1,7 @@
 import React from 'react';
-import image from '../../images/login-new.png';
-import loginBanner from '../../images/call_banner.jpg';
+import image from '../images/login-new.png';
+import loginBanner from '../images/call_banner.jpg';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
@@ -26,17 +27,18 @@ const Register = () => {
                                 <div class="w-[80%] mx-auto">
                                     <form action="#" className='flex flex-col gap-5 w-full mt-12'>
                                     
-                                        <input type="text" placeholder="Username or Email" className='p-4 w-full rounded text-xl border'/>
+                                        <input type="text" placeholder="User Name" className='p-4 w-full rounded text-xl border'/>
 
                                         <input type="email" placeholder="Username or Email" className='p-4 w-full rounded text-xl border'/>
 
                                         <input type="password" placeholder="Password" className='p-4 w-full rounded text-xl border'/>
                                        
-                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login</button>
+                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Create an Account</button>
 
-                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login with Google</button>
+                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Signup with Google</button>
 
-                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login with GitHub</button>
+                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">SignUp with GitHub</button>
+                                        <p>Alrady have an account? <Link to='/login' className='text-orange-300 underline'>Log in</Link> </p>
                                     
                                     </form>
                                 </div>

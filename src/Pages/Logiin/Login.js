@@ -1,6 +1,7 @@
 import React from 'react';
 import image from '../../images/login-new.png';
 import loginBanner from '../../images/call_banner.jpg';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -35,6 +36,8 @@ const Login = () => {
                                         <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login with Google</button>
 
                                         <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login with GitHub</button>
+
+                                        <p>For creating new account <Link to='/register' className='text-orange-300 underline'>Create new account</Link></p>
                                     
                                     </form>
                                 </div>
