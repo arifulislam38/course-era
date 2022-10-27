@@ -5,6 +5,7 @@ import Body from "../Pages/Body/Body";
 import CourseDeatails from "../Pages/CourseDetails/CourseDeatails";
 import Courses from "../Pages/courses/Courses";
 import Courses1 from "../Pages/courses/Courses1";
+import Login from "../Pages/Logiin/Login";
 
 export let routes = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export let routes = createBrowserRouter([
                 path: '/course/:id',
                 loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
                 element: <CourseDeatails></CourseDeatails>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ],
     },

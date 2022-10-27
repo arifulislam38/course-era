@@ -50,7 +50,7 @@ useEffect(()=> {
 
 <div className="navbar bg-slate-200 fixed top-0">
             <div className="navbar-end font-semibold text-2xl text-orange-300 flex justify-evenly">
-               <Link className='hover:bg-gray-200 p-2 rounded'>Courses</Link>
+               <Link className='hover:bg-gray-200 p-2 rounded' to={'/courses'}>Courses</Link>
                <Link className='hover:bg-gray-200 p-2 rounded'>Blog</Link>
                <Link className='hover:bg-gray-200 p-2 rounded'>about</Link>
                <Link className='hover:bg-gray-200 p-2 rounded'>FAQ</Link>
