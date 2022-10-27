@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaComment, FaIdBadge } from 'react-icons/fa';
 
 const CourseDeatails = () => {
@@ -37,7 +37,7 @@ const CourseDeatails = () => {
                     <div className='text-start text-xl mt-7'>
                         <h1 className='mb-7 font-serif text-orange-500 text-3xl'>{title}</h1>
                         <p className='mb-4'>{descriptions}</p>
-                        <button className='py-2 px-5 rounded bg-orange-300'>Get Premium Acess</button>
+                        <button className='py-2 px-5 rounded bg-orange-300'><Link to='/premium'>Get Premium Acess</Link></button>
                         
                     </div>
                 </div>

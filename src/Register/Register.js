@@ -2,19 +2,18 @@ import React, { useContext, useState } from 'react';
 import image from '../images/login-new.png';
 import loginBanner from '../images/call_banner.jpg';
 import { Link } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import { AuthContext } from '../Context/Auth/Auth';
+import toast from 'react-hot-toast';
 
 const Register = () => {
      const [error, setError] = useState('');
-    // const [accepted, setAccepted] = useState(false);
     const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        // const photoURL = form.photoURL.value;
+        const photoURL = form.photourl.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(name,  email, password);
@@ -25,9 +24,10 @@ const Register = () => {
                 console.log(user);
                 setError('');
                 form.reset();
-                // handleUpdateUserProfile(name, photoURL);
+                handleUpdateUserProfile(name, photoURL);
                 handleEmailVerification();
-                toast.success('Please verify your email address.')
+                toast.success('Please verify your email address.');
+               
             })
             .catch(e => {
                 console.error(e);
@@ -52,9 +52,7 @@ const Register = () => {
         .catch(error => console.error(error));
     }
 
-    // const handleAccepted = event => {
-    //     setAccepted(event.target.checked)
-    // }
+    
 
     return (
         <section>
@@ -80,6 +78,8 @@ const Register = () => {
                                     <form onSubmit={handleSubmit} className='flex flex-col gap-5 w-full mt-12'>
                                     
                                         <input type="text" name='name' placeholder="User Name" className='p-4 w-full rounded text-xl border'/>
+
+                                        <input type="text" name='photourl' placeholder="Photo URL" className='p-4 w-full rounded text-xl border'/>
 
                                         <input type="email" name='email' placeholder="Username or Email" className='p-4 w-full rounded text-xl border'/>
 

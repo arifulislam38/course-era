@@ -36,7 +36,7 @@ const Auth = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     }
-
+//  || currentUser.emailVerified
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log('inside auth state change', currentUser);
@@ -44,6 +44,7 @@ const Auth = ({ children }) => {
             if(currentUser === null || currentUser.emailVerified){
                 setUser(currentUser);
             }
+            // setUser(currentUser)
             setLoading(false);
         });
 
