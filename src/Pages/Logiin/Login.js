@@ -6,15 +6,20 @@ import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../Context/Auth/Auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
       const [error, setError] = useState('');
-    const { signIn, setLoading } = useContext(AuthContext);
+    const { signIn, setLoading, providerLogin , setUser } = useContext(AuthContext);
     
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
+
+    const provider = new GoogleAuthProvider();
+
+    const gitProvider = new GithubAuthProvider();
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -25,24 +30,56 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
-                form.reset();
-                setError('');
-                 navigate(from, {replace: true});
-                // if(user.emailVerified){
-                //     navigate(from, {replace: true});
-                // }
-                // else{
-                //     toast.error('Your email is not verified. Please verify your email address.')
-                // }
+                  form.reset();
+               setError('');
+                 
+                if(user.emailVerified){
+                    navigate(from, {replace: true});
+                }
+                else{
+                    toast.error('Your email is not verified. Please verify your email address.')
+                }
             })
             .catch(error => {
-                console.error(error)
                 setError(error.message);
             })
             .finally(() => {
                 setLoading(false);
             })
+    };
+
+    const popupLogin = () =>{
+        providerLogin(provider)
+        .then((result)=>{
+            // const user = result.user;
+            toast.success('successfully login');
+            console.log(from)
+            // setUser(user);
+            navigate(from, {replace: true});
+         
+        })
+        .catch(error => console.error(error))
+        .finally(()=>{
+            setLoading(false);
+             
+        })
+    };
+
+    const githubLogin = () =>{
+        providerLogin(gitProvider)
+        .then((result)=>{
+            const user = result.user;
+            toast.success('successfully login');
+            setUser(user);
+            
+            navigate(from, {replace: true});
+            
+        })
+        .catch(error => console.error(error))
+        .finally(()=>{
+            setLoading(false);
+            
+        })
     }
     return (
         <section>
@@ -70,12 +107,14 @@ const Login = () => {
                                         <input type="email" name='email' placeholder="Username or Email" className='p-4 w-full rounded text-xl border'/>
 
                                         <input type="password" name='password' placeholder="Password" className='p-4 w-full rounded text-xl border'/>
+
+                                        {error && <p>{error}</p>}
                                        
                                         <button type='submit' class="w-full bg-orange-200 py-4 rounded  text-xl">Login</button>
 
-                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login with Google</button>
+                                        <button onClick={popupLogin} class="w-full bg-orange-200 py-4 rounded  text-xl">Login with Google</button>
 
-                                        <button class="w-full bg-orange-200 py-4 rounded  text-xl">Login with GitHub</button>
+                                        <button onClick={githubLogin} class="w-full bg-orange-200 py-4 rounded  text-xl">Login with GitHub</button>
 
                                         <p>For creating new account <Link to='/register' className='text-orange-300 underline'>Create new account</Link></p>
                                     

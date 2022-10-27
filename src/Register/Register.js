@@ -43,13 +43,13 @@ const Register = () => {
 
         updateUserProfile(profile)
             .then(() => { })
-            .catch(error => console.error(error));
+            .catch(error => setError(error));
     }
 
     const handleEmailVerification  = () => {
         verifyEmail()
         .then(() =>{})
-        .catch(error => console.error(error));
+        .catch(error => setError(error));
     }
 
     
@@ -84,14 +84,12 @@ const Register = () => {
                                         <input type="email" name='email' placeholder="Username or Email" className='p-4 w-full rounded text-xl border'/>
 
                                         <input type="password" name='password' placeholder="Password" className='p-4 w-full rounded text-xl border'/>
+
+                                        {error && <p>{error}</p>}
                                        
                                         <button type="submit" className="w-full bg-orange-200 py-4 rounded  text-xl">Create an Account</button>
 
-                                        <button className="w-full bg-orange-200 py-4 rounded  text-xl">Signup with Google</button>
-
                                         
-
-                                        <button className="w-full bg-orange-200 py-4 rounded  text-xl">SignUp with GitHub</button>
                                         <p>Alrady have an account? <Link to='/login' className='text-orange-300 underline'>Log in</Link> </p>
                                     
                                     </form>
