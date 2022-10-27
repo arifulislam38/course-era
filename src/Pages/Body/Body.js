@@ -10,7 +10,7 @@ const Body = () => {
     
     return (
         <>
-        <section className='flex justify-evenly items-center mb-14'>
+        <section className='flex flex-row md:flex-col xl:flex-row lg:flex-row sm:flex-col  justify-evenly items-center mb-14'>
             <div className='bg-orange-200 rounded p-4 flex justify-evenly items-center gap-6'>
                 <div><ImUsers className='w-12 h-12'></ImUsers></div>
                 <div className='text-start text-xl font-semibold'><h2>1200+</h2>

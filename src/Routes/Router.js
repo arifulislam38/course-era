@@ -5,7 +5,6 @@ import Body from "../Pages/Body/Body";
 import CourseDeatails from "../Pages/CourseDetails/CourseDeatails";
 import Courses from "../Pages/courses/Courses";
 import Courses1 from "../Pages/courses/Courses1";
-import Log from "../Pages/log";
 import Login from "../Pages/Logiin/Login";
 import PremiumCourse from "../Pages/PremiumCourse/PremiumCourse";
 import Register from "../Register/Register";
@@ -53,10 +52,6 @@ export let routes = createBrowserRouter([
             {
                 path:'/premium',
                 element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>
-            },
-            {
-                path: '/log',
-                element: <Log></Log>
             }
         ],
     },

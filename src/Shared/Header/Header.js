@@ -34,24 +34,19 @@ useEffect(()=> {
             .catch(error => console.error(error))
     };
     return (
-        // <nav className={`flex justify-between items-center bg-slate-300 h-[10vh] px-10 shadow-gray-300 ${open? 'mb-32' : 'mb-1'} border-b-2 border-gray-400`}>
- 
-                    <div className="flex justify-evenly items-center px-5 bg-slate-200">
-                        <div className=" font-semibold text-2xl text-orange-300 flex justify-between">
-                            <NavLink className='hover:bg-gray-200 p-2 rounded' to={'/courses'}>Courses</NavLink>
-                            <NavLink className='hover:bg-gray-200 p-2 rounded' to='/blog'>Blog</NavLink>
-                            <NavLink className='hover:bg-gray-200 p-2 rounded' to='/about'>about</NavLink>
-                            <NavLink className='hover:bg-gray-200 p-2 rounded' to='/faq'>FAQ</NavLink>
-                        </div>
-                        <div className="navbar-center">
-                            <h1 className='text-5xl font-serif text-orange-400'>Learn Guru</h1>
-                        </div>
-                        <div className="">
+        <nav className={`flex justify-between items-center w-full bg-slate-300 h-[20vh] px-10 shadow-gray-300 ${open? 'mb-32' : 'mb-1'} border-b-2 border-slate-200`}>
+          <div>
+            <h1 className='lg:text-5xl sm:text-4xl text-2xl text-orange-400 font-serif sm:text-start'>Learning Guru</h1>
+          </div>
+
+
+            
+            <div className=" flex justify-between items-center gap-3 text-xl text-orange-400 ">
                             <button className='w-7 h-7 font-bold' onClick={changeTheme}>{value === 'light'? <BsMoonStarsFill className='w-full h-full'></BsMoonStarsFill> : <BsSun className='w-full h-full'></BsSun>}</button>
                            {user ?
                             
                            <div className='flex gap-3 justify-center items-center'>
-                            <p>{user?.email}</p>
+                           
                             <img className='w-[50px] h-[50px] rounded-full' src={user?.photoURL} alt="" />
                             <button onClick={handleLogOut}>Log out</button>
                            </div>
@@ -61,15 +56,23 @@ useEffect(()=> {
                             <Link to='register'>Register</Link>
                            </div>
                            }
-                        </div>
+            </div>
 
-                        <div className='md:hidden h-6 w-6' onClick={() => setOpen(!open)}>
-                            {
-                            open ? <ImCross></ImCross> : <FaBars></FaBars>
-                            }
-                        </div>
-                    </div>
-        // </nav>
+
+
+          <div className={`lg:text-xl md:text-xl text-lg text-orange-400 flex gap-4 absolute md:static ${open? 'top-28 flex flex-col bg-slate-300 ml-[-40px] w-full': 'top-[-400px]'}`} >
+              <NavLink to='/' className={({isActive}) => isActive ? 'text-blue-500' : ''}>Home</NavLink>
+
+              <NavLink to='/courses' className={({isActive}) => isActive ? 'text-blue-500' : ''}>Courses</NavLink>
+
+              <NavLink to='/faq' className={({isActive}) => isActive ? 'text-blue-500' : ''}>FAQ</NavLink>
+          </div>
+          <div className='md:hidden h-6 w-6' onClick={() => setOpen(!open)}>
+            {
+              open ? <ImCross></ImCross> : <FaBars></FaBars>
+            }
+          </div>
+        </nav>
     );
 };
 

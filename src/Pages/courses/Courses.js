@@ -3,8 +3,8 @@ import { Link, Outlet } from 'react-router-dom';
 
 const Courses = () => {
     return (
-        <div className='flex mb-12'>
-            <aside className='w-[25%]'>
+        <div className='flex sm:block mb-12'>
+            <aside className='w-[25%] sm:w-[100%] sm:mb-4'>
                 <h1 className='text-4xl font-serif text-orange-300 mb-8'>Course Category</h1>
                 <div className='w-[90%] mx-auto border rounded p-2 flex flex-col gap-3'>
                     

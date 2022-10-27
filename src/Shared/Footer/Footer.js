@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaAngleRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -15,7 +16,7 @@ const Footer = () => {
                 </div>
                 <div class="">
                     <div class="">
-                        <a class="btn btn-light btn-round" href="#">Join Now</a>
+                        <button className='p-4 text-xl bg-orange-300 rounded'><Link to='/login'>Join Now</Link></button>
                     </div>
                 </div>
             </div>
@@ -25,7 +26,7 @@ const Footer = () => {
     
         <div class=" text-gray-300 text-start">
             <div class="w-[80%] mx-auto py-8">
-                <div class="grid grid-cols-3 gap-5 mb-6">
+                <div class="grid grid-cols-3 sm:grid-cols-1 gap-5 mb-6">
 
 
                     <div class="text-xl font-serif">
@@ -44,12 +45,7 @@ const Footer = () => {
                                 <p>Business@themerocket.net</p>
                             </div>
 
-                            <ul class="">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
+                           
                         </div>
                     </div>
 

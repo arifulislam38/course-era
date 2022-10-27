@@ -11,7 +11,7 @@ const CourseCard = ({course}) => {
     const {id, name, description, video, ebook, price, image, rating} = course;
     return (
         
-        <div className='border w-[32.2%] p-2 relative'>
+        <div className='border w-[100%] sm:w-[100%] md:w-[100%] lg:w-[32.2%] xl:w-[32.2%] p-2 relative'>
             <button className='bg-orange-500 px-2 py-1 absolute top-4 right-0 text-yellow-50'>$ {price}</button>
             <div className='w-full h-full'>
                 <img className='w-full h-[40%]' src={image} alt="" />
