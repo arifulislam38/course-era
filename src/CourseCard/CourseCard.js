@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 
 const CourseCard = ({course}) => {
 
- 
-    
-
     const {id, name, description, video, ebook, price, image, rating} = course;
     return (
         

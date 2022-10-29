@@ -20,7 +20,7 @@ export let routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader:()=> fetch('http://localhost:5000'),
+                loader:()=> fetch('https://web-server-woad.vercel.app'),
                 element: <Body></Body>
             },
             {
@@ -29,19 +29,19 @@ export let routes = createBrowserRouter([
                 children:[
                     {
                         path: '/courses',
-                        loader:()=> fetch('http://localhost:5000'),
+                        loader:()=> fetch('https://web-server-woad.vercel.app'),
                         element: <Courses1></Courses1>
                     },
                     {
                         path: '/courses/:catname',
-                        loader: ({params})=> fetch(`http://localhost:5000/courses/${params.catname}`),
+                        loader: ({params})=> fetch(`https://web-server-woad.vercel.app/courses/${params.catname}`),
                         element: <Courses1></Courses1>
                     },
                 ],
             },
             {
                 path: '/course/:id',
-                loader: ({params}) => fetch(`http://localhost:5000/course/${params.id}`),
+                loader: ({params}) => fetch(`https://web-server-woad.vercel.app/course/${params.id}`),
                 element: <CourseDeatails></CourseDeatails>
             },
             {
@@ -54,7 +54,7 @@ export let routes = createBrowserRouter([
             },
             {
                 path:'/premium/:name',
-                loader: ({params}) => fetch(`http://localhost:5000/premium/${params.name}`),
+                loader: ({params}) => fetch(`https://web-server-woad.vercel.app/premium/${params.name}`),
                 element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>
             },
             {

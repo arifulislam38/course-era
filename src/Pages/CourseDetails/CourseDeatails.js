@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import { FaComment, FaIdBadge } from 'react-icons/fa';
+import { FaComment, FaIdBadge, FaPrint } from 'react-icons/fa';
+import ReactToPrint from 'react-to-print';
 
 const CourseDeatails = () => {
-
+    const reference = useRef();
     const data = useLoaderData();
-    console.log(data)
 
     const {name, image, video, ebook, rating, description, price, id } = data;
 
     const {descriptions, title} = description;
 
     return (
-        <section className='mb-40 border-slate-900'>
+        <section ref={reference} className='mb-40 border-slate-900'>
             <div className='h-[50vh] relative mb-40'>
                 <img className='w-full h-full opacity-50' src={image} alt="" />
                 <h1 className='text-6xl font-serif absolute bottom-[10%] left-[12%]'><span className='text-orange-400'>-- Details of</span> {name}</h1>
@@ -35,7 +35,7 @@ const CourseDeatails = () => {
                         </div>
                     </div>
                     <div className='text-start text-xl mt-7'>
-                        <h1 className='mb-7 font-serif text-orange-500 text-3xl'>{title}</h1>
+                        <h1 className='mb-7 font-serif text-orange-500 text-3xl'>{title} <ReactToPrint trigger={()=> <button className='inline ml-3 bg-slate-400 p-3 rounded-lg'><FaPrint></FaPrint></button>} content={()=> reference.current}></ReactToPrint> </h1>
                         <p className='mb-4'>{descriptions}</p>
                         <button className='py-2 px-5 rounded bg-orange-300'><Link to={`/premium/${id}`}>Get Premium Acess</Link></button>
 

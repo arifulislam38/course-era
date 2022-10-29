@@ -51,10 +51,7 @@ const Login = () => {
     const popupLogin = () =>{
         providerLogin(provider)
         .then((result)=>{
-            // const user = result.user;
             toast.success('successfully login');
-            console.log(from)
-            // setUser(user);
             navigate(from, {replace: true});
          
         })
@@ -91,17 +88,17 @@ const Login = () => {
             </div>
             
             <div className='py-28'>
-            <div class="w-[90%] mx-auto rounded">
-                    <div class="grid grid-cols-2 gap-5">
-                        <div class="p-8">
+            <div className="w-[90%] mx-auto rounded">
+                    <div className="grid grid-cols-2 gap-5">
+                        <div className="p-8">
                             <img src={image} alt="Register Login"/>
                           </div>
                
-                        <div class="p-8">
+                        <div className="p-8">
                              
-                                <h3 class="text-4xl text-orange-400 font-serif">Login <span>Now</span></h3>
+                                <h3 className="text-4xl text-orange-400 font-serif">Login <span>Now</span></h3>
 
-                                <div class="w-[80%] mx-auto">
+                                <div className="w-[80%] mx-auto">
                                     <form onSubmit={handleSubmit} className='flex flex-col gap-5 w-full mt-12'>
                                     
                                         <input type="email" name='email' placeholder="Username or Email" className='p-4 w-full rounded text-xl border'/>
@@ -110,11 +107,11 @@ const Login = () => {
 
                                         {error && <p>{error}</p>}
                                        
-                                        <button type='submit' class="w-full bg-orange-200 py-4 rounded  text-xl">Login</button>
+                                        <button type='submit' className="w-full bg-orange-200 py-4 rounded  text-xl">Login</button>
 
-                                        <button onClick={popupLogin} class="w-full bg-orange-200 py-4 rounded  text-xl">Login with Google</button>
+                                        <button onClick={popupLogin} className="w-full bg-orange-200 py-4 rounded  text-xl">Login with Google</button>
 
-                                        <button onClick={githubLogin} class="w-full bg-orange-200 py-4 rounded  text-xl">Login with GitHub</button>
+                                        <button onClick={githubLogin} className="w-full bg-orange-200 py-4 rounded  text-xl">Login with GitHub</button>
 
                                         <p>For creating new account <Link to='/register' className='text-orange-300 underline'>Create new account</Link></p>
                                     

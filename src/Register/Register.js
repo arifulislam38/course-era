@@ -16,7 +16,6 @@ const Register = () => {
         const photoURL = form.photourl.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,  email, password);
 
         createUser(email, password)
             .then(result => {
@@ -30,7 +29,6 @@ const Register = () => {
                
             })
             .catch(e => {
-                console.error(e);
                 setError(e.message);
             });
     }
@@ -64,17 +62,17 @@ const Register = () => {
             </div>
             
             <div className='py-28'>
-            <div class="w-[90%] mx-auto rounded">
-                    <div class="grid grid-cols-2 gap-5">
-                        <div class="p-8">
+            <div className="w-[90%] mx-auto rounded">
+                    <div className="grid grid-cols-2 gap-5">
+                        <div className="p-8">
                             <img src={image} alt="Register Login"/>
                           </div>
                
-                        <div class="p-8">
+                        <div className="p-8">
                              
-                                <h3 class="text-4xl text-orange-400 font-serif">Register <span>Now</span></h3>
+                                <h3 className="text-4xl text-orange-400 font-serif">Register <span>Now</span></h3>
 
-                                <div class="w-[80%] mx-auto">
+                                <div className="w-[80%] mx-auto">
                                     <form onSubmit={handleSubmit} className='flex flex-col gap-5 w-full mt-12'>
                                     
                                         <input type="text" name='name' placeholder="Full Name" className='p-4 w-full rounded text-xl border'/>

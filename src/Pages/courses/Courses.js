@@ -17,6 +17,8 @@ const Courses = () => {
                     <button className='border text-xl font-serif py-3 rounded text-gray-600'><Link to={'/courses/programming language'}>Programming language</Link></button>
 
                     <button className='border text-xl font-serif py-3 rounded text-gray-600'><Link to={'/courses/AI Language'}>AI Language</Link></button>
+
+                    <button className='border text-xl font-serif py-3 rounded text-gray-600'><Link to={'/courses/DataBase'}>DataBase</Link></button>
                     
                 </div>
             </aside>

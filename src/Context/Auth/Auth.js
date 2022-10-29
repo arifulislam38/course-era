@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../../Firebase/Firebase.config';
-import toast from 'react-hot-toast';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -40,17 +39,14 @@ const Auth = ({ children }) => {
         setLoading(true);
         return signOut(auth);
     }
-//  || currentUser.emailVerified
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log('inside auth state change', currentUser);
-
-            
-
+ 
             if(currentUser === null || currentUser.emailVerified || currentUser.uid){
                 setUser(currentUser);
             }
-            // setUser(currentUser)
+            
             setLoading(false);
         });
 
@@ -58,7 +54,7 @@ const Auth = ({ children }) => {
             unsubscribe();
         }
 
-    }, [])
+    }, []);
 
     const authInfo = { 
         user, 

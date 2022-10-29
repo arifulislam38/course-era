@@ -17,7 +17,7 @@ const Blog = () => {
 
                 <span>Other firebase alternatives</span>
 
-                <p>
+               
                     <ul>
                         <li>Parse</li>
                         <li> AWS Amplify</li>
@@ -28,7 +28,7 @@ const Blog = () => {
                         <li>Kinvey</li>
                         <li>Flutter</li>
                     </ul>
-                </p>
+                
             </div>
 
             <div className='border text-xl text-start p-3 mb-3'>

@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { ImUsers } from 'react-icons/im';
+
 import { useLoaderData } from 'react-router-dom';
 import CourseCard from '../../CourseCard/CourseCard';
 
 const Body = () => {
 
     const courses = useLoaderData();
-    console.log(courses);
     
     return (
         <>
