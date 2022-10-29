@@ -10,26 +10,9 @@ const Body = () => {
     
     return (
         <>
-        <section className='flex flex-row md:flex-col xl:flex-row lg:flex-row sm:flex-col  justify-evenly items-center mb-14'>
-            <div className='bg-orange-200 rounded p-4 flex justify-evenly items-center gap-6'>
-                <div><ImUsers className='w-12 h-12'></ImUsers></div>
-                <div className='text-start text-xl font-semibold'><h2>1200+</h2>
-                <h2>Expert Tutors</h2></div>
-            </div>
-            <div className='bg-orange-200 rounded p-4 flex justify-evenly items-center gap-6'>
-                <div><ImUsers className='w-12 h-12'></ImUsers></div>
-                <div className='text-start text-xl font-semibold'><h2>1200+</h2>
-                <h2>Expert Tutors</h2></div>
-            </div>
-            <div className='bg-orange-200 rounded p-4 flex justify-evenly items-center gap-6'>
-                <div><ImUsers className='w-12 h-12'></ImUsers></div>
-                <div className='text-start text-xl font-semibold'><h2>1200+</h2>
-                <h2>Expert Tutors</h2></div>
-            </div>
-            <div className='bg-orange-200 rounded p-4 flex justify-evenly items-center gap-6'>
-                <div><ImUsers className='w-12 h-12'></ImUsers></div>
-                <div className='text-start text-xl font-semibold'><h2>1200+</h2>
-                <h2>Expert Tutors</h2></div>
+        <section className='mb-8'>
+            <div className='w-[95%] h-[80vh] mx-auto rounded-md bg-slate-400 flex justify-center items-center'>
+                <h1 className='text-5xl font-serif text-orange-300'>Welcome To Learning Guru</h1>
             </div>
         </section>
             <section>

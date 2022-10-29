@@ -1,19 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
-import CourseCard from "../CourseCard/CourseCard";
 import Main from "../Layout/Main/Main";
+import Blog from '../Pages/Blog/Blog'
 import Body from "../Pages/Body/Body";
 import CourseDeatails from "../Pages/CourseDetails/CourseDeatails";
 import Courses from "../Pages/courses/Courses";
 import Courses1 from "../Pages/courses/Courses1";
+import ErrorPage from "../Pages/errorelemnt/ErrorPage";
 import Login from "../Pages/Logiin/Login";
 import PremiumCourse from "../Pages/PremiumCourse/PremiumCourse";
 import Register from "../Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import FAQ from '../Pages/FAQ/FAQ';
 
 export let routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -54,6 +57,14 @@ export let routes = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/premium/${params.name}`),
                 element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>
             },
+            {
+                path:'/faq',
+                element: <FAQ></FAQ>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            }
         ],
     },
 ]);

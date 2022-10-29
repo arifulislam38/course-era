@@ -26,7 +26,7 @@ const Footer = () => {
     
         <div class=" text-gray-300 text-start">
             <div class="w-[80%] mx-auto py-8">
-                <div class="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-5 mb-6">
+                <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-5 mb-6">
 
 
                     <div class="text-xl font-serif">

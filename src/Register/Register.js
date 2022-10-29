@@ -77,7 +77,8 @@ const Register = () => {
                                 <div class="w-[80%] mx-auto">
                                     <form onSubmit={handleSubmit} className='flex flex-col gap-5 w-full mt-12'>
                                     
-                                        <input type="text" name='name' placeholder="User Name" className='p-4 w-full rounded text-xl border'/>
+                                        <input type="text" name='name' placeholder="Full Name" className='p-4 w-full rounded text-xl border'/>
+
 
                                         <input type="text" name='photourl' placeholder="Photo URL" className='p-4 w-full rounded text-xl border'/>
 

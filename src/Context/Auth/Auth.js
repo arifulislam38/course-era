@@ -47,7 +47,7 @@ const Auth = ({ children }) => {
 
             
 
-            if(currentUser === null || currentUser.emailVerified){
+            if(currentUser === null || currentUser.emailVerified || currentUser.uid){
                 setUser(currentUser);
             }
             // setUser(currentUser)

@@ -7,8 +7,15 @@ const Courses1 = () => {
     console.log(data)
 
     return (
-       <div className='w-[75%] sm:w-[100%] flex flex-wrap gap-3'>
-         {data.map(course => <CourseCard course={course}></CourseCard>)}
+       <div className='lg:w-[75%] xl:w-[75%] md:w-[75%] sm:w-[100%] flex flex-wrap gap-3'>
+
+         {data? 
+            data.map(course => <CourseCard course={course}></CourseCard>) 
+            :
+            <div className='flex justify-center items-center text-3xl text-red-400 font-serif w-full'><p>No data found</p></div>
+          
+          }
+         {/* {!data ? <p>No data found</p> : ''} */}
        </div>
     );
 };
