@@ -80,16 +80,16 @@ const Login = () => {
     }
     return (
         <section>
-            <div className='h-[50vh] border border-red-600 relative'>
+            <div className='h-[50vh] border relative'>
                 <img src={loginBanner} alt="" className='w-full h-full opacity-50' />
-                 <h1 className='absolute top-[60%] left-[10%] text-orange-500 text-5xl font-serif '>
+                 <h1 className='absolute top-[50%] left-[10%] text-orange-500 text-5xl font-serif '>
                 Welcome to Login Page
             </h1>
             </div>
             
             <div className='py-28'>
             <div className="w-[90%] mx-auto rounded">
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-5">
                         <div className="p-8">
                             <img src={image} alt="Register Login"/>
                           </div>
